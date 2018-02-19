@@ -15,16 +15,14 @@ class ViewController: UIViewController {
   
     // Keep track of colors with an enum and and index
     var currentBGColor = 0
-    var colorsArray = [Colors.Green, .White, .Blue, .Black, .Red]
+    var colorsArray = [Colors.green, .white, .blue, .black, .red, .colorless]
   
   
   // MARK: IBOutlets
-  
     @IBOutlet weak var lifeCounterLabel: UILabel!
   
   
   // MARK: IBActions
-  
     @IBAction func pressedColorsButton() {
       // Get the next color
         nextColor()
@@ -51,16 +49,13 @@ class ViewController: UIViewController {
         }
     }
     
-    
     @IBAction func pressedReset() {
         self.lifeCounter = 20
         self.lifeCounterLabel.text = lifeCounter.description
         self.lifeCounterLabel.textColor = UIColor.white
     }
   
-  
   // MARK: View Lifecycle
-  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -71,7 +66,6 @@ class ViewController: UIViewController {
   
   
   // MARK: Setup
-  
   func setupLife() {
     self.lifeCounterLabel.text = lifeCounter.description
     self.lifeCounterLabel.textColor = lifeCounterLabelColor
@@ -87,11 +81,6 @@ class ViewController: UIViewController {
     currentBGColor = currentBGColor % colorsArray.count
     setupBackground()
   }
-  
-  func setBackgroundColor(index: Int) {
-    
-  }
-    
 
   // MARK: Utility
   
