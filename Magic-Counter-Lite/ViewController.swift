@@ -12,19 +12,22 @@ class ViewController: UIViewController {
     
     var lifeCounter: Int = 20
     var lifeCounterLabelColor = UIColor.white
-    
+  
+    // Keep track of colors with an enum and and index
+    var currentBGColor = 0
+    var colorsArray = [Colors.Green, .White, .Blue, .Black, .Red]
+  
+  
+  // MARK: IBOutlets
+  
     @IBOutlet weak var lifeCounterLabel: UILabel!
-    
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.lifeCounterLabel.text = lifeCounter.description
-        self.lifeCounterLabel.textColor = lifeCounterLabelColor
-    }
-
-    
+  
+  
+  // MARK: IBActions
+  
     @IBAction func pressedColorsButton() {
-        self.view.backgroundColor = UIColor.blue
+      // Get the next color
+        nextColor()
     }
     
     @IBAction func pressedPlus() {
@@ -54,8 +57,44 @@ class ViewController: UIViewController {
         self.lifeCounterLabel.text = lifeCounter.description
         self.lifeCounterLabel.textColor = UIColor.white
     }
+  
+  
+  // MARK: View Lifecycle
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    // Moved initialization to some helper methods
+    setupLife()
+    setupBackground()
+  }
+  
+  
+  // MARK: Setup
+  
+  func setupLife() {
+    self.lifeCounterLabel.text = lifeCounter.description
+    self.lifeCounterLabel.textColor = lifeCounterLabelColor
+  }
+  
+  func setupBackground() {
+     self.view.backgroundColor = colorsArray[currentBGColor].toUIColor()
+  }
+  
+  func nextColor() {
+    // Get the next color on the wheel
+    currentBGColor += 1
+    currentBGColor = currentBGColor % colorsArray.count
+    setupBackground()
+  }
+  
+  func setBackgroundColor(index: Int) {
+    
+  }
     
 
+  // MARK: Utility
+  
     func setLifeCounterLabelColorToRed() -> UIColor {
         let color = UIColor.red
         return color
