@@ -11,6 +11,8 @@
     </dependencies>
     <customFonts key="customFonts">
         <array key="AvenirNext.ttc">
+            <string>AvenirNext-DemiBold</string>
+            <string>AvenirNext-Medium</string>
             <string>AvenirNext-Regular</string>
         </array>
     </customFonts>
@@ -26,7 +28,7 @@
                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumScaleFactor="1" translatesAutoresizingMaskIntoConstraints="NO" id="IZ2-Sf-H8J">
                                 <rect key="frame" x="20" y="197" width="335" height="273.5"/>
                                 <gestureRecognizers/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="200"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="200"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <connections>
@@ -34,8 +36,12 @@
                                     <outletCollection property="gestureRecognizers" destination="iwW-Ql-c2B" appends="YES" id="2n8-QX-vYv"/>
                                 </connections>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YHC-gv-7kz">
-                                <rect key="frame" x="329" y="318" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YHC-gv-7kz">
+                                <rect key="frame" x="329" y="251" width="30" height="165"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="165" id="QpI-4v-lG0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
                                 <state key="normal" title="+1">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -43,8 +49,12 @@
                                     <action selector="pressedPlus" destination="BYZ-38-t0r" eventType="touchUpInside" id="08G-8E-JJK"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bu-y5-iPA">
-                                <rect key="frame" x="16" y="318" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bu-y5-iPA">
+                                <rect key="frame" x="16" y="251" width="30" height="165"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="165" id="8de-PM-2z2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
                                 <state key="normal" title="-1">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -58,19 +68,17 @@
                                     <constraint firstAttribute="width" constant="65" id="enA-Rt-uNp"/>
                                     <constraint firstAttribute="height" constant="85" id="vsw-Ra-4xl"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="colorsIcon"/>
+                                <state key="normal" title="Button" image="colorsIconW"/>
                                 <connections>
                                     <action selector="pressedColorsButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="WHe-rd-0rx"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ri6-1h-I7F">
-                                <rect key="frame" x="164.5" y="545.5" width="46" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ri6-1h-I7F">
+                                <rect key="frame" x="156" y="545.5" width="63" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="1ha-fC-M41"/>
-                                    <constraint firstAttribute="width" constant="46" id="MVJ-Mi-I6R"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="vBr-Cn-a6g"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="25"/>
                                 <state key="normal" title="Reset">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -79,7 +87,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.50311957465277779" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Ri6-1h-I7F" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3Qy-fe-I6u"/>
                             <constraint firstItem="IZ2-Sf-H8J" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="3fb-8g-nSS"/>
@@ -116,6 +124,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="colorsIcon" width="750" height="978"/>
+        <image name="colorsIconW" width="375" height="489"/>
     </resources>
 </document>
