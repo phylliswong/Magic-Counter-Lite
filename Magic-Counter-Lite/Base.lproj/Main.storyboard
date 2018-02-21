@@ -131,7 +131,6 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="pressedResetWins" destination="BYZ-38-t0r" eventType="touchUpInside" id="seP-yF-HUh"/>
-                                                    <action selector="resetWins" destination="BYZ-38-t0r" eventType="touchUpInside" id="whj-bw-n1h"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UyK-4S-rqx">

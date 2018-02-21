@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var winsLabel: UILabel!
     
     
-    
+    // MARK: Setup
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,10 +34,28 @@ class ViewController: UIViewController {
         setupBackground()
     }
     
+    func setupLife() {
+        self.lifeCounterLabel.text = lifeCounter.description
+        self.lifeCounterLabel.textColor = lifeCounterLabelColor
+        self.winsLabel.text = wins.description
+    }
+    
+    func setupBackground() {
+        // Start the background on Green
+        self.view.backgroundColor = colorsArray[currentBGColor].toUIColor()
+    }
+    
+    func nextColor() {
+        // Get the next color on the wheel
+        currentBGColor += 1
+        currentBGColor = currentBGColor % colorsArray.count
+        setupBackground()
+    }
+    
   
     // MARK: Actions
     @IBAction func pressedColorsButton() {
-        // Get the next color
+        // Cycle through the different background colors
         nextColor()
     }
     
@@ -57,8 +75,7 @@ class ViewController: UIViewController {
     }
     
     
-
-    // Update the label and the life variable for the swipe gesture
+    // Update the label and the life variable for the swipe gestures
     private func updateLifeCounter(_ num: Int) {
         lifeCounter += num
         lifeCounterLabel.text = lifeCounter.description
@@ -72,10 +89,12 @@ class ViewController: UIViewController {
         }
     }
     
+    // Change the life total with swipe gestures
     @IBAction func didSwipeLeft(_ sender: UISwipeGestureRecognizer) {
         let life = -10
         updateLifeCounter(life)
     }
+    
     @IBAction func didSwipeRight(_ sender: UISwipeGestureRecognizer) {
         let life = 10
         updateLifeCounter(life)
@@ -90,26 +109,9 @@ class ViewController: UIViewController {
         let life = -5
         updateLifeCounter(life)
     }
+
     
-    
-    func updateWins() {
-        self.wins += 1
-        winsLabel.text = wins.description
-    }
-    
-    func updateLoses() {
-        //self.loses += 1
-//        losesLabel.text = loses.description
-    }
-    
-    @IBAction func resetWins() {
-        self.wins = 0
-       // self.loses = 0
-        self.winsLabel.text = wins.description
-//        self.losesLabel.text = loses.description
-    }
-    
-    
+    // Add 1 to the total life and set the font color
     @IBAction func pressedPlus() {
         self.lifeCounter += 1
         self.lifeCounterLabel.text = lifeCounter.description
@@ -121,6 +123,7 @@ class ViewController: UIViewController {
         
     }
     
+    // Subtract 1 from the total life and set the font color
     @IBAction func pressedMinus() {
         self.lifeCounter -= 1
         self.lifeCounterLabel.text = lifeCounter.description
@@ -131,38 +134,16 @@ class ViewController: UIViewController {
         }
     }
     
+    func setLifeCounterLabelColorToRed() -> UIColor {
+        let color = UIColor.red
+        return color
+    }
+    
+    // Reset the life to 20 and set the font color
     @IBAction func pressedReset() {
         self.lifeCounter = 20
         self.lifeCounterLabel.text = lifeCounter.description
         self.lifeCounterLabel.textColor = UIColor.white
     }
-  
-
-  
-  
-  // MARK: Setup
-  func setupLife() {
-    self.lifeCounterLabel.text = lifeCounter.description
-    self.lifeCounterLabel.textColor = lifeCounterLabelColor
-  }
-  
-  func setupBackground() {
-     self.view.backgroundColor = colorsArray[currentBGColor].toUIColor()
-  }
-  
-  func nextColor() {
-    // Get the next color on the wheel
-    currentBGColor += 1
-    currentBGColor = currentBGColor % colorsArray.count
-    setupBackground()
-  }
-
-  // MARK: Utility
-  
-    func setLifeCounterLabelColorToRed() -> UIColor {
-        let color = UIColor.red
-        return color
-    }
-
 }
 
