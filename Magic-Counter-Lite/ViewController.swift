@@ -28,6 +28,34 @@ class ViewController: UIViewController {
         nextColor()
     }
     
+    // FIXME:
+    // Refactor code to take in a method
+    // Method takes in a num: Int
+    
+    private func updateLifeCounter(_ num: Int) {
+        lifeCounter += num
+        lifeCounterLabel.text = lifeCounter.description
+        
+        if self.lifeCounter > 0 {
+            let white = UIColor.white
+            self.lifeCounterLabel.textColor = white
+        } else {
+            let red = setLifeCounterLabelColorToRed()
+            self.lifeCounterLabel.textColor = red
+        }
+    }
+    @IBAction func didSwipeLeft(_ sender: Any) {
+        let life = 10
+        updateLifeCounter(life)
+//        self.lifeCounterLabel.text = lifeCounter.description
+    }
+    @IBAction func didSwipeRight(_ sender: Any) {
+//        self.lifeCounter += 10
+        let life = -10
+        updateLifeCounter(life)
+//        self.lifeCounterLabel.text = lifeCounter.description
+    }
+ 
     @IBAction func pressedPlus() {
         self.lifeCounter += 1
         self.lifeCounterLabel.text = lifeCounter.description
