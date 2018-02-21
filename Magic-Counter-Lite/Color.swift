@@ -20,17 +20,17 @@ enum Colors {
   func toUIColor() -> UIColor {
     switch self {
     case .red:
-      return UIColor(r: 173, g: 32, b: 52)
+      return UIColor(r: 235, g: 160, b: 136)
     case .green:
-        return UIColor(r: 0, g: 143, b: 0)
+        return UIColor(r: 165, g: 215, b: 165)
     case .white:
-      return UIColor(r: 231, g: 217, b: 120)
+      return UIColor(r: 235, g: 220, b: 185)
     case .blue:
-      return UIColor(r: 47, g: 181, b: 250)
+      return UIColor(r: 130, g: 185, b: 225)
     case .black:
-      return UIColor(r: 30, g: 30, b: 30)
+      return UIColor(r: 40, g: 40, b: 40)
     case .colorless:
-      return UIColor(r: 109, g: 109, b: 109)
+      return UIColor(r: 175, g: 168, b: 168)
     }
   }
 }

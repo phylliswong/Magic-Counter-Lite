@@ -12,26 +12,53 @@ class ViewController: UIViewController {
     
     var lifeCounter: Int = 20
     var lifeCounterLabelColor = UIColor.white
+    var wins: Int = 0
+    
   
-    // Keep track of colors with an enum and and index
+    // Keep track of colors with an enum and index
     var currentBGColor = 0
-    var colorsArray = [Colors.green, .white, .blue, .black, .red, .colorless]
+    var colorsArray = [Colors.green, .red, .blue, .white, .black, .colorless]
   
   
-  // MARK: IBOutlets
+    // MARK: Outlets
     @IBOutlet weak var lifeCounterLabel: UILabel!
+    @IBOutlet weak var winsLabel: UILabel!
+    
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Start with 20 life and green background
+        setupLife()
+        setupBackground()
+    }
+    
   
-  
-  // MARK: IBActions
+    // MARK: Actions
     @IBAction func pressedColorsButton() {
-      // Get the next color
+        // Get the next color
         nextColor()
     }
     
-    // FIXME:
-    // Refactor code to take in a method
-    // Method takes in a num: Int
+    @IBAction func pressedWin() {
+        self.wins += 1
+        self.winsLabel.text = wins.description
+    }
     
+    @IBAction func pressedLose() {
+        self.wins -= 1
+        self.winsLabel.text = wins.description
+    }
+    
+    @IBAction func pressedResetWins() {
+        self.wins = 0
+        self.winsLabel.text = wins.description
+    }
+    
+    
+
+    // Update the label and the life variable for the swipe gesture
     private func updateLifeCounter(_ num: Int) {
         lifeCounter += num
         lifeCounterLabel.text = lifeCounter.description
@@ -44,18 +71,45 @@ class ViewController: UIViewController {
             self.lifeCounterLabel.textColor = red
         }
     }
-    @IBAction func didSwipeLeft(_ sender: Any) {
-        let life = 10
-        updateLifeCounter(life)
-//        self.lifeCounterLabel.text = lifeCounter.description
-    }
-    @IBAction func didSwipeRight(_ sender: Any) {
-//        self.lifeCounter += 10
+    
+    @IBAction func didSwipeLeft(_ sender: UISwipeGestureRecognizer) {
         let life = -10
         updateLifeCounter(life)
-//        self.lifeCounterLabel.text = lifeCounter.description
     }
- 
+    @IBAction func didSwipeRight(_ sender: UISwipeGestureRecognizer) {
+        let life = 10
+        updateLifeCounter(life)
+    }
+    
+    @IBAction func swipedUp(_ sender: UISwipeGestureRecognizer) {
+        let life = 5
+        updateLifeCounter(life)
+    }
+    
+    @IBAction func swipedDown(_ sender: UISwipeGestureRecognizer) {
+        let life = -5
+        updateLifeCounter(life)
+    }
+    
+    
+    func updateWins() {
+        self.wins += 1
+        winsLabel.text = wins.description
+    }
+    
+    func updateLoses() {
+        //self.loses += 1
+//        losesLabel.text = loses.description
+    }
+    
+    @IBAction func resetWins() {
+        self.wins = 0
+       // self.loses = 0
+        self.winsLabel.text = wins.description
+//        self.losesLabel.text = loses.description
+    }
+    
+    
     @IBAction func pressedPlus() {
         self.lifeCounter += 1
         self.lifeCounterLabel.text = lifeCounter.description
@@ -83,14 +137,7 @@ class ViewController: UIViewController {
         self.lifeCounterLabel.textColor = UIColor.white
     }
   
-  // MARK: View Lifecycle
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    
-    // Moved initialization to some helper methods
-    setupLife()
-    setupBackground()
-  }
+
   
   
   // MARK: Setup
