@@ -28,10 +28,20 @@ class ViewController: UIViewController {
     // MARK: Setup
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Start with 20 life and green background
         setupLife()
         setupBackground()
+    }
+    
+    // Lock the view in Portrait
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        AppDelegate.AppUtility.lockOrientation(.portrait)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        AppDelegate.AppUtility.lockOrientation(.all)
     }
     
     func setupLife() {
