@@ -1,7 +1,7 @@
 # Magic Counter Lite
 Magic Counter Lite is a minimalist life counter to be used while playing Magic the Gathering. It's designed for a single player to track their life as well as their total wins/loses. Tap targets are very large, while the visual elements are modest.
 
-[alt text](greeniPhone6.png)
+![Screen Shot](greeniPhone6.png)
 
 ### Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
