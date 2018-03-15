@@ -29,9 +29,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Start with 20 life and green background
-        setupLife()
+//        setupLife()
         setupBackground()
+        
     }
+
     
     // Lock the view in Portrait
     override func viewDidAppear(_ animated: Bool) {
@@ -44,16 +46,17 @@ class ViewController: UIViewController {
         AppDelegate.AppUtility.lockOrientation(.all)
     }
     
-    func setupLife() {
-        self.lifeCounterLabel.text = lifeCounter.description
-        self.lifeCounterLabel.textColor = lifeCounterLabelColor
-        self.winsLabel.text = wins.description
-    }
+//    func setupLife() {
+//        self.lifeCounterLabel.text = lifeCounter.description
+//        self.lifeCounterLabel.textColor = lifeCounterLabelColor
+//        self.winsLabel.text = wins.description
+//    }
     
     func setupBackground() {
         // Start the background on Green
         self.view.backgroundColor = colorsArray[currentBGColor].toUIColor()
     }
+    
     
     func nextColor() {
         // Get the next color on the wheel
@@ -154,6 +157,11 @@ class ViewController: UIViewController {
         self.lifeCounter = 20
         self.lifeCounterLabel.text = lifeCounter.description
         self.lifeCounterLabel.textColor = UIColor.white
+    }
+    
+    // hide the keyboard when user touches outside the keyboard
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
 }
 

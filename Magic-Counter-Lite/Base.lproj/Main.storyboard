@@ -8,7 +8,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Baseline standard spacing" minToolsVersion="9.0"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -89,61 +88,6 @@
                                     <action selector="pressedReset" destination="BYZ-38-t0r" eventType="touchUpInside" id="vXx-4d-pdc"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="center" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vzO-Id-63d" userLabel="score">
-                                <rect key="frame" x="16" y="36" width="131" height="77"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="247" verticalHuggingPriority="251" horizontalCompressionResistancePriority="753" verticalCompressionResistancePriority="751" text="0" textAlignment="center" lineBreakMode="clip" minimumScaleFactor="1" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e28-7u-Wyu" userLabel="winsLabel">
-                                        <rect key="frame" x="20.5" y="0.0" width="90" height="41"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="feb-Kd-XqN"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="30"/>
-                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <size key="shadowOffset" width="0.0" height="0.0"/>
-                                    </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jY0-Or-aSB" userLabel="win/lose/reset">
-                                        <rect key="frame" x="0.0" y="41" width="131" height="36"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1bH-fN-gsS">
-                                                <rect key="frame" x="0.0" y="0.0" width="37" height="36"/>
-                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
-                                                <state key="normal" title="Lose">
-                                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="pressedLose" destination="BYZ-38-t0r" eventType="touchUpInside" id="uWw-CG-cys"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SEz-Ha-hXn">
-                                                <rect key="frame" x="47" y="0.0" width="43" height="36"/>
-                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
-                                                <state key="normal" title="Reset">
-                                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="pressedResetWins" destination="BYZ-38-t0r" eventType="touchUpInside" id="seP-yF-HUh"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UyK-4S-rqx">
-                                                <rect key="frame" x="100" y="0.0" width="31" height="36"/>
-                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
-                                                <state key="normal" title="Win">
-                                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="pressedWin" destination="BYZ-38-t0r" eventType="touchUpInside" id="hfu-t0-xfV"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="77" id="DBu-pa-mU1"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="e28-7u-Wyu" secondAttribute="trailing" constant="20.5" id="QEg-8c-nqQ"/>
-                                    <constraint firstItem="e28-7u-Wyu" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vzO-Id-63d" secondAttribute="leading" constant="20.5" id="eh4-9W-ymI"/>
-                                </constraints>
-                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xyu-hu-UDX" userLabel="colors">
                                 <rect key="frame" x="239" y="36" width="65" height="85"/>
                                 <constraints>
@@ -155,13 +99,24 @@
                                     <action selector="pressedColorsButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="WHe-rd-0rx"/>
                                 </connections>
                             </button>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bSh-qs-k8M">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Item" image="dieIcon" id="2Es-JD-3a6" userLabel="dice">
+                                        <color key="tintColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <segue destination="5zO-Nh-I78" kind="show" id="Okd-en-lJW"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                                <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" red="0.61568627450980395" green="0.82352941176470584" blue="0.68627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xyu-hu-UDX" secondAttribute="trailing" constant="16" id="COH-rg-usO"/>
-                            <constraint firstItem="vzO-Id-63d" firstAttribute="top" secondItem="xyu-hu-UDX" secondAttribute="top" id="GN5-oc-ZmU"/>
                             <constraint firstItem="Ri6-1h-I7F" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HbK-kP-8xr"/>
-                            <constraint firstItem="vzO-Id-63d" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="MVE-CC-Q4T"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ri6-1h-I7F" secondAttribute="trailing" id="PZy-t0-dbd"/>
                             <constraint firstItem="Ri6-1h-I7F" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="U95-3j-WHV"/>
                             <constraint firstItem="Ccs-MZ-mzW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="UPg-yF-aXL"/>
@@ -170,13 +125,11 @@
                             <constraint firstAttribute="trailing" secondItem="Ccs-MZ-mzW" secondAttribute="trailing" id="eWj-zh-Im9"/>
                             <constraint firstItem="Ccs-MZ-mzW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gOH-5c-ctB"/>
                             <constraint firstItem="Ri6-1h-I7F" firstAttribute="firstBaseline" secondItem="IZ2-Sf-H8J" secondAttribute="baseline" constant="100" symbolType="layoutAnchor" id="rm9-C0-cHX"/>
-                            <constraint firstItem="Ccs-MZ-mzW" firstAttribute="top" secondItem="vzO-Id-63d" secondAttribute="bottom" constant="35" id="xnS-Js-i68"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="lifeCounterLabel" destination="IZ2-Sf-H8J" id="Zt4-Xq-oTe"/>
-                        <outlet property="winsLabel" destination="e28-7u-Wyu" id="VfO-fk-DpL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -201,10 +154,71 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="32.799999999999997" y="31.934032983508249"/>
+            <point key="canvasLocation" x="31.875" y="31.690140845070424"/>
+        </scene>
+        <!--Dice Roll View Controller-->
+        <scene sceneID="uAq-aj-ynv">
+            <objects>
+                <viewController id="5zO-Nh-I78" customClass="DiceRollViewController" customModule="Magic_Counter_Lite" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zwU-FP-VwB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="100" translatesAutoresizingMaskIntoConstraints="NO" id="mec-gl-roP">
+                                <rect key="frame" x="16" y="147.5" width="288" height="273.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="200"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gw0-69-gFI">
+                                <rect key="frame" x="16" y="416" width="288" height="47"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="25"/>
+                                <state key="normal" title="Reset">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetButton:" destination="5zO-Nh-I78" eventType="touchUpInside" id="5Z1-ax-MIy"/>
+                                </connections>
+                            </button>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5TD-3Z-oJu">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <barButtonItem title="Item" image="user" id="3JZ-eE-hAQ">
+                                        <color key="tintColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="singleUserButton:" destination="5zO-Nh-I78" id="wNM-O6-ITR"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" red="0.61568627450980395" green="0.82352941176470584" blue="0.68627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="mec-gl-roP" firstAttribute="leading" secondItem="HU1-bZ-c7E" secondAttribute="leading" constant="16" id="0Go-vK-Qkv"/>
+                            <constraint firstItem="gw0-69-gFI" firstAttribute="leading" secondItem="HU1-bZ-c7E" secondAttribute="leading" constant="16" id="I3m-NR-pEt"/>
+                            <constraint firstItem="gw0-69-gFI" firstAttribute="centerX" secondItem="zwU-FP-VwB" secondAttribute="centerX" id="JDa-qf-eP5"/>
+                            <constraint firstItem="mec-gl-roP" firstAttribute="centerX" secondItem="zwU-FP-VwB" secondAttribute="centerX" id="QVH-tR-PdB"/>
+                            <constraint firstItem="mec-gl-roP" firstAttribute="centerY" secondItem="zwU-FP-VwB" secondAttribute="centerY" id="Ygy-FQ-e7S"/>
+                            <constraint firstItem="gw0-69-gFI" firstAttribute="top" secondItem="mec-gl-roP" secondAttribute="bottom" constant="-5" id="a6q-LR-QBV"/>
+                            <constraint firstItem="HU1-bZ-c7E" firstAttribute="trailing" secondItem="gw0-69-gFI" secondAttribute="trailing" constant="16" id="mZ3-3v-RLk"/>
+                            <constraint firstItem="HU1-bZ-c7E" firstAttribute="trailing" secondItem="mec-gl-roP" secondAttribute="trailing" constant="16" id="pA9-CC-Uvv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HU1-bZ-c7E"/>
+                    </view>
+                    <connections>
+                        <outlet property="diceLabel" destination="mec-gl-roP" id="maL-pv-Og1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="opr-3g-9Aq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="786" y="32"/>
         </scene>
     </scenes>
     <resources>
         <image name="colorsIconW" width="375" height="489"/>
+        <image name="dieIcon" width="37" height="37"/>
+        <image name="user" width="50" height="50"/>
     </resources>
 </document>
