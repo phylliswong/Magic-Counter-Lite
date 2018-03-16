@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import Foundation
 
 class DiceRollViewController: UIViewController {
     
     // Keep track of colors with an enum and index
     var currentBGColor = 0
     var colorsArray = [Colors.green, .red, .blue, .white, .black, .colorless]
+    var numbersArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
 
     @IBOutlet weak var diceLabel: UILabel!
     
@@ -35,29 +37,47 @@ class DiceRollViewController: UIViewController {
         setupBackground()
     }
     
-    
+    // Allows for shake gestures to be recognized
     override func becomeFirstResponder() -> Bool {
         return true
     }
     
+    // When the motion ends, call the func to update the label
+    // Change color of background when the number changes
     override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
-            self.updateDiceLabel()
+            timerCounter = 15
+            startTimer()
+            
+        }
+    }
+    
+    var timerCounter = 15
+    var timerTest = Timer()
+    
+    func startTimer () {
+        timerTest =  Timer.scheduledTimer(
+            timeInterval: TimeInterval(0.08),
+            target      : self,
+            selector    : #selector(self.updateDiceLabel),
+            userInfo    : nil,
+            repeats     : true)
+    }
+
+    // Grab random index from the numbers array
+    @objc func updateDiceLabel() {
+        let randomIndex  = Int(arc4random_uniform(20))
+        diceLabel.font = diceLabel.font.withSize(200)
+        let randomDiceRoll = numbersArray[randomIndex]
+        diceLabel.text = "\(randomDiceRoll)"
+        timerCounter -= 1
+        
+        if timerCounter == 0 {
             nextColor()
+            timerTest.invalidate()
         }
     }
 
-    
-    func updateDiceLabel() {
-        var randomNum = 0
-        while randomNum < 1 { randomNum = Int(arc4random_uniform(21)) }
-        diceLabel.font = diceLabel.font.withSize(200)
-        diceLabel.text = "\(randomNum)"
-    }
-
-//    @IBAction func backButton(_ sender: UIButton) {
-//        self.presentingViewController?.dismiss(animated: true, completion: nil)
-//    }
     
     @IBAction func singleUserButton(_ sender: UIBarButtonItem) {
        self.presentingViewController?.dismiss(animated: true, completion: nil)
