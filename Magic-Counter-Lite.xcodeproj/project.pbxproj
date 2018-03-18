@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B958F119205A0A12000E4462 /* DiceRollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B958F118205A0A12000E4462 /* DiceRollViewController.swift */; };
 		B958F11B205A71CA000E4462 /* die20.png in Resources */ = {isa = PBXBuildFile; fileRef = B958F11A205A71CA000E4462 /* die20.png */; };
+		B984226E205E16E1005277B2 /* TwoPlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B984226D205E16E1005277B2 /* TwoPlayerVC.swift */; };
 		B9EA6DEC20380F0600616BB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EA6DEB20380F0600616BB3 /* AppDelegate.swift */; };
 		B9EA6DEE20380F0600616BB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EA6DED20380F0600616BB3 /* ViewController.swift */; };
 		B9EA6DF120380F0600616BB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9EA6DEF20380F0600616BB3 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		B958F118205A0A12000E4462 /* DiceRollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceRollViewController.swift; sourceTree = "<group>"; };
 		B958F11A205A71CA000E4462 /* die20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = die20.png; sourceTree = "<group>"; };
+		B984226D205E16E1005277B2 /* TwoPlayerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoPlayerVC.swift; sourceTree = "<group>"; };
 		B9EA6DE820380F0600616BB3 /* Magic-Counter-Lite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Magic-Counter-Lite.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9EA6DEB20380F0600616BB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9EA6DED20380F0600616BB3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				B9EA6DEB20380F0600616BB3 /* AppDelegate.swift */,
 				B9EA6DED20380F0600616BB3 /* ViewController.swift */,
 				B958F118205A0A12000E4462 /* DiceRollViewController.swift */,
+				B984226D205E16E1005277B2 /* TwoPlayerVC.swift */,
 				D8FAD0012038C3720085ACD6 /* Color.swift */,
 				B9EA6DEF20380F0600616BB3 /* Main.storyboard */,
 				B9EA6DF220380F0600616BB3 /* Assets.xcassets */,
@@ -147,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B958F119205A0A12000E4462 /* DiceRollViewController.swift in Sources */,
+				B984226E205E16E1005277B2 /* TwoPlayerVC.swift in Sources */,
 				B9EA6DEE20380F0600616BB3 /* ViewController.swift in Sources */,
 				B9EA6DEC20380F0600616BB3 /* AppDelegate.swift in Sources */,
 				D8FAD0022038C3720085ACD6 /* Color.swift in Sources */,
