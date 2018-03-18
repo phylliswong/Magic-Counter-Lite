@@ -78,16 +78,22 @@ class DiceRollViewController: UIViewController {
         }
     }
 
-    
-    @IBAction func singleUserButton(_ sender: UIBarButtonItem) {
-       self.presentingViewController?.dismiss(animated: true, completion: nil)
+    func dismissView() {
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
-  
+    @IBAction func singleUserButton(_ sender: UIBarButtonItem) {
+       dismissView()
+    }
+    
+    @IBAction func twoUserButton(_ sender: UIBarButtonItem) {
+        dismissView()
+    }
+    
     
     @IBAction func resetButton(_ sender: UIButton) {
-        diceLabel.font = diceLabel.font.withSize(50)
-        diceLabel.text = "Shake me"
+        timerCounter = 15
+        startTimer()
     }
     
 }
