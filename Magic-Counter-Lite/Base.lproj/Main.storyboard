@@ -170,46 +170,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" distribution="equalSpacing" alignment="center" spacing="-18" translatesAutoresizingMaskIntoConstraints="NO" id="7NU-5D-i7g" userLabel="Player1Life">
-                                <rect key="frame" x="3.5" y="16" width="314.5" height="246"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TT7-E0-gG6">
-                                        <rect key="frame" x="0.0" y="63" width="50" height="120"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="MDA-kU-DXu"/>
-                                            <constraint firstAttribute="height" constant="120" id="aqv-z0-Ghe"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="35"/>
-                                        <state key="normal" title="−">
-                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="pressedMinus" destination="BYZ-38-t0r" eventType="touchUpInside" id="gcf-DO-etc"/>
-                                        </connections>
-                                    </button>
-                                    <label autoresizesSubviews="NO" opaque="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="center" lineBreakMode="clip" minimumFontSize="100" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iaF-NM-NNN">
-                                        <rect key="frame" x="50" y="0.0" width="214.5" height="246"/>
-                                        <gestureRecognizers/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="180"/>
-                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nWP-Jk-Tmd">
-                                        <rect key="frame" x="264.5" y="63" width="50" height="120"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="120" id="QJS-sj-PPv"/>
-                                            <constraint firstAttribute="width" constant="50" id="zYg-HM-Efa"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="35"/>
-                                        <state key="normal" title="+">
-                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="pressedPlus" destination="BYZ-38-t0r" eventType="touchUpInside" id="hlQ-iU-k6d"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B7B-w5-hQ6" userLabel="colorsPlayer1">
                                 <rect key="frame" x="250" y="9" width="65" height="85"/>
                                 <constraints>
@@ -235,14 +195,7 @@
                                 </items>
                                 <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </toolbar>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r2a-Rh-TE2" userLabel="colorsPlayer2">
-                                <rect key="frame" x="250" y="314" width="65" height="85"/>
-                                <state key="normal" title="Button" image="colorsIconW"/>
-                                <connections>
-                                    <action selector="pressedColorsButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="6R1-g3-0M2"/>
-                                </connections>
-                            </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" misplaced="YES" distribution="equalSpacing" alignment="center" spacing="-18" translatesAutoresizingMaskIntoConstraints="NO" id="3Dm-IJ-1gN" userLabel="Player2Life">
+                            <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" distribution="equalSpacing" alignment="center" spacing="-18" translatesAutoresizingMaskIntoConstraints="NO" id="3Dm-IJ-1gN" userLabel="Player2Life">
                                 <rect key="frame" x="3" y="322" width="314.5" height="246"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5G-33-dm5">
@@ -278,6 +231,54 @@
                                         </state>
                                         <connections>
                                             <action selector="pressedPlus" destination="BYZ-38-t0r" eventType="touchUpInside" id="MWy-Sf-pYk"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.23137255009999999" blue="0.18823529780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r2a-Rh-TE2" userLabel="colorsPlayer2">
+                                <rect key="frame" x="250" y="314" width="65" height="85"/>
+                                <state key="normal" title="Button" image="colorsIconW"/>
+                                <connections>
+                                    <action selector="pressedColorsButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="6R1-g3-0M2"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" misplaced="YES" distribution="equalSpacing" alignment="center" spacing="-18" translatesAutoresizingMaskIntoConstraints="NO" id="7NU-5D-i7g" userLabel="Player1Life">
+                                <rect key="frame" x="0.0" y="16" width="314.5" height="246"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TT7-E0-gG6">
+                                        <rect key="frame" x="0.0" y="63" width="50" height="120"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="MDA-kU-DXu"/>
+                                            <constraint firstAttribute="height" constant="120" id="aqv-z0-Ghe"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="35"/>
+                                        <state key="normal" title="−">
+                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pressedMinus" destination="BYZ-38-t0r" eventType="touchUpInside" id="gcf-DO-etc"/>
+                                        </connections>
+                                    </button>
+                                    <label autoresizesSubviews="NO" opaque="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="center" lineBreakMode="clip" minimumFontSize="100" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iaF-NM-NNN">
+                                        <rect key="frame" x="50" y="0.0" width="214.5" height="246"/>
+                                        <gestureRecognizers/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="180"/>
+                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nWP-Jk-Tmd">
+                                        <rect key="frame" x="264.5" y="63" width="50" height="120"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="QJS-sj-PPv"/>
+                                            <constraint firstAttribute="width" constant="50" id="zYg-HM-Efa"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="35"/>
+                                        <state key="normal" title="+">
+                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pressedPlus" destination="BYZ-38-t0r" eventType="touchUpInside" id="hlQ-iU-k6d"/>
                                         </connections>
                                     </button>
                                 </subviews>
