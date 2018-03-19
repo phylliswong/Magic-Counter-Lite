@@ -22,6 +22,7 @@
 		B958F118205A0A12000E4462 /* DiceRollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceRollViewController.swift; sourceTree = "<group>"; };
 		B958F11A205A71CA000E4462 /* die20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = die20.png; sourceTree = "<group>"; };
 		B984226D205E16E1005277B2 /* TwoPlayerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoPlayerVC.swift; sourceTree = "<group>"; };
+		B984226F20606250005277B2 /* Magic-Counter-Lite.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Magic-Counter-Lite.entitlements"; sourceTree = "<group>"; };
 		B9EA6DE820380F0600616BB3 /* Magic-Counter-Lite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Magic-Counter-Lite.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9EA6DEB20380F0600616BB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9EA6DED20380F0600616BB3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +63,7 @@
 		B9EA6DEA20380F0600616BB3 /* Magic-Counter-Lite */ = {
 			isa = PBXGroup;
 			children = (
+				B984226F20606250005277B2 /* Magic-Counter-Lite.entitlements */,
 				B9EA6DEB20380F0600616BB3 /* AppDelegate.swift */,
 				B9EA6DED20380F0600616BB3 /* ViewController.swift */,
 				B958F118205A0A12000E4462 /* DiceRollViewController.swift */,
@@ -109,6 +111,14 @@
 					B9EA6DE720380F0600616BB3 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -290,6 +300,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Magic-Counter-Lite/Magic-Counter-Lite.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S44SNCV32X;
 				INFOPLIST_FILE = "Magic-Counter-Lite/Info.plist";
@@ -305,6 +316,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Magic-Counter-Lite/Magic-Counter-Lite.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S44SNCV32X;
 				INFOPLIST_FILE = "Magic-Counter-Lite/Info.plist";
