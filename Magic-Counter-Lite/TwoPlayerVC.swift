@@ -10,38 +10,57 @@ import UIKit
 
 class TwoPlayerVC: UIViewController {
     
+    @IBOutlet weak var topStack: UIStackView!
+    
+    // Keep track of colors with an enum and index
+    var currentBGColor = 0
+    var colorsArray = [Colors.green, .red, .blue, .white, .black, .colorless]
+    
+    func setupBackground() {
+        // Start the background on Green
+        let backgroundColor = colorsArray[currentBGColor].toUIColor()
+        self.topStack.addBackground(color: backgroundColor)
+    }
+    
+    func animateViews() {
+        let animations = {
+            self.topStack.transform = CGAffineTransform(rotationAngle: .pi)
+            self.topStack.alpha = 1
+        }
+
+        // Original state
+        topStack.transform = CGAffineTransform.identity
+        topStack.alpha = 1
+
+        // Animate all the things
+        UIView.animate(withDuration: 1.4, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: .curveEaseInOut, animations: animations, completion: { _ in
+        })
+    }
+    
+    // Use instead of viewDidLoad for the animation
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupBackground()
+        animateViews()
+    }
+    
     
     @IBAction func onePlayerButton(_ sender: UIBarButtonItem) {
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
-    @IBOutlet weak var playerOneStackView: UIStackView!
-    
-    func animateViews() {
-        playerOneStackView.axis = .vertical
-        
-        let animations = {
-            self.playerOneStackView.axis = .horizontal
-            self.playerOneStackView.transform = CGAffineTransform.identity
-            self.playerOneStackView.alpha = 1
-            
-            self.view.layoutIfNeeded()
-        }
-        
-        // Original state
-        playerOneStackView.transform = CGAffineTransform(scaleX: 0, y: 0)
-        playerOneStackView.alpha = 0
-        
-        // Animate all the things
-        UIView.animate(withDuration: 1.4, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.7, options: .curveEaseInOut, animations: animations, completion: nil)
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        animateViews()
-    }
-
 }
+
+
+
+
+extension UIStackView {
+    
+    func addBackground(color: UIColor) {
+        let subView = UIView(frame: bounds)
+        subView.backgroundColor = color
+        subView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        insertSubview(subView, at: 0)
+    }
+}
+
+
