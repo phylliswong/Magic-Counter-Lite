@@ -29,7 +29,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Start with 20 life and green background
-//        setupLife()
         setupBackground()
         
     }
@@ -46,17 +45,10 @@ class ViewController: UIViewController {
         AppDelegate.AppUtility.lockOrientation(.all)
     }
     
-//    func setupLife() {
-//        self.lifeCounterLabel.text = lifeCounter.description
-//        self.lifeCounterLabel.textColor = lifeCounterLabelColor
-//        self.winsLabel.text = wins.description
-//    }
-    
     func setupBackground() {
         // Start the background on Green
         self.view.backgroundColor = colorsArray[currentBGColor].toUIColor()
     }
-    
     
     func nextColor() {
         // Get the next color on the wheel
