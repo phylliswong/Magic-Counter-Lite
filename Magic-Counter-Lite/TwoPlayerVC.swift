@@ -17,7 +17,8 @@ class TwoPlayerVC: UIViewController {
     @IBOutlet weak var playerTwoLife: UILabel!
     
     // Keep track of colors with an enum and index
-    var currentBGColor = 0
+    var currentBGColorPlayer1 = 0
+    var currentBGColorPlayer2 = 0
     var colorsArray = [Colors.green, .red, .blue, .white, .black, .colorless]
     
     
@@ -36,44 +37,69 @@ class TwoPlayerVC: UIViewController {
     
     
     
-    func setupBackground() {
+    func setupBackgroundPlayerOne() {
         // Start the background on Green
-        let backgroundColor = colorsArray[currentBGColor].toUIColor()
+        let backgroundColor = colorsArray[currentBGColorPlayer1].toUIColor()
         self.topStack.addBackground(color: backgroundColor)
+    }
+    
+    func setupBackgroundPlayerTwo() {
+        // Start the background on Green
+        let backgroundColor = colorsArray[currentBGColorPlayer2].toUIColor()
         self.bottomStack.addBackground(color: backgroundColor)
     }
     
-    func animateViews() {
-        let animations = {
-            self.topStack.transform = CGAffineTransform(rotationAngle: .pi)
-            self.topStack.alpha = 1
-        }
-
-        // Original state
-        topStack.transform = CGAffineTransform.identity
-        topStack.alpha = 1
-
-        // Animate all the things
-        UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.6, options: .curveLinear, animations: animations, completion: { _ in
-        })
-    }
-
-    // Use instead of viewDidLoad for the animation
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        setupBackground()
-        animateViews()
+    func nextColorPlayerOne() {
+        // Get the next color on the wheel
+        currentBGColorPlayer1 += 1
+        currentBGColorPlayer1 = currentBGColorPlayer1 % colorsArray.count
+        setupBackgroundPlayerOne()
     }
     
-    // Lock the screen in portrait view
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        AppDelegate.AppUtility.lockOrientation(.portrait)
+    func nextColorPlayerTwo() {
+        // Get the next color on the wheel
+        currentBGColorPlayer2 += 1
+        currentBGColorPlayer2 = currentBGColorPlayer1 % colorsArray.count
+        setupBackgroundPlayerTwo()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        AppDelegate.AppUtility.lockOrientation(.all)
+    @IBAction func pressedColorsPlayer1(_ sender: UIButton) {
+        nextColorPlayerOne()
+        print("pressed colors player One\n")
+    }
+    
+
+    @IBAction func pressedColorsPlayer2(_ sender: UIButton) {
+        print("pressed colors player Two\n")
+        nextColorPlayerTwo()
+    }
+    
+    // Swipe gestures for Player One StackView
+    @IBAction func swipedRightP1(_ sender: UISwipeGestureRecognizer) {
+        print("right")
+    }
+    @IBAction func swipedLeftP1(_ sender: UISwipeGestureRecognizer) {
+        print("left")
+    }
+    @IBAction func swipedUpP1(_ sender: UISwipeGestureRecognizer) {
+        print("up")
+    }
+    @IBAction func swipedDownP1(_ sender: UISwipeGestureRecognizer) {
+        print("down")
+    }
+    
+    // Swipe gestures for Player Two StackView
+    @IBAction func swipedRightP2(_ sender: UISwipeGestureRecognizer) {
+        print("right")
+    }
+    @IBAction func swipedLeftP2(_ sender: UISwipeGestureRecognizer) {
+        print("left")
+    }
+    @IBAction func swipedUpP2(_ sender: UISwipeGestureRecognizer) {
+        print("up")
+    }
+    @IBAction func swipedDownP2(_ sender: UISwipeGestureRecognizer) {
+        print("down")
     }
     
     

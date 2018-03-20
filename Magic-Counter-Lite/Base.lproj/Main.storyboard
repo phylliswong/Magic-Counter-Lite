@@ -190,7 +190,7 @@
                                                             <color key="titleColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="pressedColorsButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="mc5-Xq-bH9"/>
+                                                            <action selector="pressedColorsPlayer1:" destination="g7R-DP-caq" eventType="touchUpInside" id="udX-vg-DNg"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -219,6 +219,12 @@
                                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="140"/>
                                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
+                                                        <connections>
+                                                            <outletCollection property="gestureRecognizers" destination="JGR-XO-paQ" appends="YES" id="I3O-Vy-cVk"/>
+                                                            <outletCollection property="gestureRecognizers" destination="Wm0-QT-beC" appends="YES" id="963-US-7bA"/>
+                                                            <outletCollection property="gestureRecognizers" destination="uPS-KN-gkd" appends="YES" id="bXa-7a-RBr"/>
+                                                            <outletCollection property="gestureRecognizers" destination="Rsi-Ah-A9s" appends="YES" id="Nlc-RZ-vbb"/>
+                                                        </connections>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nWP-Jk-Tmd">
                                                         <rect key="frame" x="270" y="42" width="50" height="120"/>
@@ -280,7 +286,7 @@
                                                             <color key="titleColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="pressedColorsButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="6R1-g3-0M2"/>
+                                                            <action selector="pressedColorsPlayer2:" destination="g7R-DP-caq" eventType="touchUpInside" id="yhW-Rh-Neb"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -310,6 +316,12 @@
                                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="140"/>
                                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
+                                                        <connections>
+                                                            <outletCollection property="gestureRecognizers" destination="3V5-aD-kZ5" appends="YES" id="8io-bo-mlw"/>
+                                                            <outletCollection property="gestureRecognizers" destination="2cF-4e-w5L" appends="YES" id="tez-4J-SXj"/>
+                                                            <outletCollection property="gestureRecognizers" destination="QYz-g2-rh1" appends="YES" id="d5W-yq-Jw1"/>
+                                                            <outletCollection property="gestureRecognizers" destination="YcD-l6-FEQ" appends="YES" id="0MQ-NW-MbZ"/>
+                                                        </connections>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gSx-cG-Fth">
                                                         <rect key="frame" x="270" y="43.5" width="50" height="120"/>
@@ -352,6 +364,46 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JOo-3H-Q6a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="JGR-XO-paQ" userLabel="Swiped left player1">
+                    <connections>
+                        <action selector="swipedRightP1:" destination="g7R-DP-caq" id="RxP-Z7-LSh"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="Wm0-QT-beC" userLabel="Swiped right player1">
+                    <connections>
+                        <action selector="swipedLeftP1:" destination="g7R-DP-caq" id="f4U-cT-sUF"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="up" id="uPS-KN-gkd" userLabel="Swiped up player1">
+                    <connections>
+                        <action selector="swipedUpP1:" destination="g7R-DP-caq" id="nH8-Q7-xhU"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="down" id="Rsi-Ah-A9s" userLabel="Swiped down player1">
+                    <connections>
+                        <action selector="swipedDownP1:" destination="g7R-DP-caq" id="xka-bX-Rpc"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="3V5-aD-kZ5" userLabel="Swiped right player2">
+                    <connections>
+                        <action selector="swipedRightP2:" destination="g7R-DP-caq" id="uOX-tO-mfZ"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="2cF-4e-w5L" userLabel="Swiped left player2">
+                    <connections>
+                        <action selector="swipedLeftP2:" destination="g7R-DP-caq" id="IWO-Vy-ITW"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="up" id="QYz-g2-rh1" userLabel="Swiped up player2">
+                    <connections>
+                        <action selector="swipedUpP2:" destination="g7R-DP-caq" id="gJX-Nf-oZc"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="down" id="YcD-l6-FEQ" userLabel="Swiped down player2">
+                    <connections>
+                        <action selector="swipedDownP2:" destination="g7R-DP-caq" id="IEm-bi-zs9"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="32" y="814"/>
         </scene>
