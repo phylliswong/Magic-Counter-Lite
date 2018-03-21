@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class OnePlayerVC: UIViewController {
     
     var lifeCounter: Int = 20
     var lifeCounterLabelColor = UIColor.white
