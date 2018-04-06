@@ -13,7 +13,7 @@ import UIKit
 enum Colors {
   
   // Colors to represent the Magic colors
-  case red, green, white, blue, black, colorless
+  case red, pink, green, white, blue, black, colorless
   
   // Return the UIColor color for enum
   // FIXME: The RGB values need work!
@@ -21,6 +21,8 @@ enum Colors {
     switch self {
     case .red:
       return UIColor(r: 235, g: 160, b: 136)
+    case .pink:
+        return UIColor(r: 235, g: 160, b: 36)
     case .green:
         return UIColor(r: 165, g: 215, b: 165)
     case .white:
